@@ -1,0 +1,156 @@
+[
+  {
+    "name": "القيروان",
+    "area": "القيروان",
+    "map": "https://maps.app.goo.gl/WugYoKxFfm8boLSs8",
+    "phone": "966557725444",
+    "booking": "",
+    "method": "واتساب",
+    "price": null,
+    "note": "",
+    "status": "موقع من المستخدم"
+  },
+  {
+    "name": "العارض",
+    "area": "العارض",
+    "map": "https://maps.app.goo.gl/HvfSkBHHYgiw7RCeA",
+    "phone": "966557725444",
+    "booking": "",
+    "method": "واتساب",
+    "price": null,
+    "note": "",
+    "status": "موقع من المستخدم"
+  },
+  {
+    "name": "شوايات",
+    "area": "",
+    "map": "https://maps.app.goo.gl/nhSn1ZzEQ479vEQ59",
+    "phone": "",
+    "booking": "",
+    "method": "تطبيق ملاعب",
+    "price": null,
+    "note": "",
+    "status": "موقع من المستخدم"
+  },
+  {
+    "name": "جامعة اليمامة",
+    "area": "القيروان · طريق الملك فهد",
+    "map": "https://www.google.com/maps/search/?api=1&query=Al%20Yamamah%20University%20Riyadh",
+    "phone": "9665599888307",
+    "booking": "",
+    "method": "واتساب",
+    "price": 150,
+    "note": "ساعة ونصف: ٢٠٠ ريال · ساعتان: ٢٥٠ ريال. موقع الجامعة؛ بوابة الملعب تحتاج تأكيد. العملة مفترضة بالريال.",
+    "status": "بحث بالخريطة"
+  },
+  {
+    "name": "جامعة الأمير سلطان",
+    "area": "شارع رفحاء",
+    "map": "https://www.google.com/maps/search/?api=1&query=Prince%20Sultan%20University%20Riyadh",
+    "phone": "",
+    "booking": "https://intennis-sa.com/book/hourly",
+    "method": "إن تنس",
+    "price": null,
+    "note": "موقع الجامعة؛ مدخل الملعب يحتاج تأكيد.",
+    "status": "بحث بالخريطة"
+  },
+  {
+    "name": "المدينة الرقمية",
+    "area": "كراون بلازا المدينة الرقمية",
+    "map": "https://www.google.com/maps/search/?api=1&query=Crowne%20Plaza%20Riyadh%20RDC%20Hotel",
+    "phone": "",
+    "booking": "https://intennis-sa.com/book/hourly",
+    "method": "إن تنس",
+    "price": null,
+    "note": "الموقع من تقرير ثمانية؛ مدخل الملعب يحتاج تأكيد.",
+    "status": "بحث بالخريطة"
+  },
+  {
+    "name": "نت تنس",
+    "area": "الدرعية",
+    "map": "https://www.google.com/maps/search/?api=1&query=Net%20Tennis%20Academy%20Diriyah",
+    "phone": "",
+    "booking": "https://netacademy.sa",
+    "method": "الموقع الإلكتروني",
+    "price": null,
+    "note": "قرب بادل أب وملاعب المونديال حسب تقرير ثمانية.",
+    "status": "بحث بالخريطة"
+  },
+  {
+    "name": "راكت",
+    "area": "مركز الملك سلمان الاجتماعي",
+    "map": "https://www.google.com/maps/search/?api=1&query=Racket%20Tennis%20King%20Salman%20Social%20Center%20Riyadh",
+    "phone": "",
+    "booking": "",
+    "method": "تطبيق سنجاب",
+    "price": null,
+    "note": "",
+    "status": "بحث بالخريطة"
+  },
+  {
+    "name": "بيت التنس",
+    "area": "",
+    "map": "https://www.google.com/maps/search/?api=1&query=Tennis%20Home%20Academy%20Riyadh",
+    "phone": "",
+    "booking": "https://tennishomeacademy.com",
+    "method": "الموقع الإلكتروني",
+    "price": null,
+    "note": "٣ ملاعب حسب ملاحظاتك. الفروع المقصودة تحتاج تحديد؛ المصدر يذكر ٣ فروع.",
+    "status": "بحث بالخريطة"
+  },
+  {
+    "name": "كمباوند سلوى",
+    "area": "",
+    "map": "https://www.google.com/maps/search/?api=1&query=Salwa%20Garden%20Village%20Riyadh",
+    "phone": "34680800055",
+    "booking": "",
+    "method": "واتساب · يونس",
+    "price": null,
+    "note": "الموقع المرجّح Salwa Garden Village؛ يُؤكَّد مع يونس. شروط الدخول غير محددة.",
+    "status": "بحث بالخريطة"
+  },
+  {
+    "name": "كمباوند نجد",
+    "area": "غرناطة",
+    "map": "https://www.google.com/maps/search/?api=1&query=Najd%20Compound%20Ghirnatah%20Riyadh",
+    "phone": "",
+    "booking": "https://najdcompound.com/",
+    "method": "الاستقبال أو المدرب",
+    "price": null,
+    "note": "٣ ملاعب مضاءة وفق الموقع الرسمي. تأكيد الفرع وإمكانية حجز غير السكان مطلوبان.",
+    "status": "بحث بالخريطة"
+  },
+  {
+    "name": "وادي حنيفة — Spin",
+    "area": "وادي حنيفة",
+    "map": "https://maps.app.goo.gl/E9nEb3JmCVLXu7SV7?g_st=ic",
+    "phone": "966557000674",
+    "booking": "https://matchpointksa.com/rent-court/p502506753",
+    "method": "Matchpoint",
+    "price": 200,
+    "note": "السعر واللوكيشن من المستخدم.",
+    "status": "موقع من المستخدم"
+  },
+  {
+    "name": "الإنتركونتيننتال",
+    "area": "",
+    "map": "https://maps.app.goo.gl/7LZbBFji8xC3KigTA?g_st=ic",
+    "phone": "",
+    "booking": "",
+    "method": "",
+    "price": null,
+    "note": "طريقة الحجز ورقم التواصل غير متوفرين.",
+    "status": "موقع من المستخدم"
+  },
+  {
+    "name": "فال كمباوند",
+    "area": "طريق المطار · مقابل جامعة الإمام",
+    "map": "https://www.google.com/maps/search/?api=1&query=24.812028,46.715833",
+    "phone": "",
+    "booking": "https://falcompounds.org/",
+    "method": "تم إرسال إيميل",
+    "price": null,
+    "note": "ملعبان حسب الموقع الرسمي. بانتظار الرد عن الحجز والأسعار وشروط الدخول.",
+    "status": "إحداثيات المنشأة"
+  }
+]
