@@ -28,8 +28,9 @@
     "phone": "",
     "booking": "",
     "method": "تطبيق ملاعب",
-    "price": null,
-    "note": "",
+    "price": 110,
+    "priceHours": 1,
+    "note": "ساعة: ١١٠ ريال · ساعة ونصف: ١٤٠ ريال · ساعتان: ١٩٠ ريال.",
     "status": "موقع من المستخدم",
     "pricing": [
       {
