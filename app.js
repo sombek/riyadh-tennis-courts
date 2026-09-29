@@ -1,7 +1,7 @@
 'use strict';
 const icons = {
   ball:'<circle cx="12" cy="12" r="9"/><path d="M5 5c5 2 9 6 14 14M5 19c2-5 6-9 14-14"/>',
-  court:'<rect x="3" y="4" width="18" height="16" rx="1"/><path d="M6 4v16M18 4v16M3 12h18M6 8h12M6 16h12M12 8v8"/>',
+  court:'<rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 8h18M3 16h18M8 8v8M16 8v8M8 12h8M12 5v14"/>',
   pin:'<path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',
   search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',
   bookmark:'<path d="M6 4h12v17l-6-4-6 4V4Z"/>',
