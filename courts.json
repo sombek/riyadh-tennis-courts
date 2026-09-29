@@ -169,10 +169,12 @@
     "area": "",
     "map": "https://maps.app.goo.gl/7LZbBFji8xC3KigTA?g_st=ic",
     "phone": "",
+    "callPhone": "966114655000",
     "booking": "",
-    "method": "",
-    "price": null,
-    "note": "طريقة الحجز ورقم التواصل غير متوفرين.",
+    "method": "اتصال هاتفي",
+    "price": 230,
+    "priceHours": 1,
+    "note": "الحجز في نفس اليوم عبر الهاتف، ابتداءً من الساعة ١٠ صباحًا. رقم الحجز: 0114655000.",
     "status": "موقع من المستخدم"
   },
   {
