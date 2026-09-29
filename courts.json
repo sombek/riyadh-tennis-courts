@@ -72,9 +72,10 @@
     "phone": "",
     "booking": "https://netacademy.sa",
     "method": "الموقع الإلكتروني",
-    "price": null,
+    "price": 200,
     "note": "قرب بادل أب وملاعب المونديال حسب تقرير ثمانية.",
-    "status": "بحث بالخريطة"
+    "status": "بحث بالخريطة",
+    "priceHours": 1
   },
   {
     "name": "راكت",
