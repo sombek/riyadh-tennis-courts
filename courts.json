@@ -94,9 +94,10 @@
     "phone": "",
     "booking": "https://tennishomeacademy.com",
     "method": "الموقع الإلكتروني",
-    "price": null,
+    "price": 286,
     "note": "٣ ملاعب حسب ملاحظاتك. الفروع المقصودة تحتاج تحديد؛ المصدر يذكر ٣ فروع.",
-    "status": "بحث بالخريطة"
+    "status": "بحث بالخريطة",
+    "priceHours": 2
   },
   {
     "name": "كمباوند سلوى",
