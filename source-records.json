@@ -1,0 +1,206 @@
+[
+  {
+    "name": "القيروان",
+    "area": "القيروان",
+    "map": "https://maps.app.goo.gl/WugYoKxFfm8boLSs8",
+    "phone": "966557725444",
+    "booking": "",
+    "method": "واتساب",
+    "price": 110,
+    "note": "ساعة ونصف: ١٥٥ ريال · ساعتان: ٢١٠ ريال.",
+    "status": "موقع من المستخدم"
+  },
+  {
+    "name": "العارض",
+    "area": "العارض",
+    "map": "https://maps.app.goo.gl/HvfSkBHHYgiw7RCeA",
+    "phone": "966557725444",
+    "booking": "",
+    "method": "واتساب",
+    "price": 110,
+    "note": "ساعة ونصف: ١٥٥ ريال · ساعتان: ٢١٠ ريال.",
+    "status": "موقع من المستخدم"
+  },
+  {
+    "name": "شوايات",
+    "area": "",
+    "map": "https://maps.app.goo.gl/nhSn1ZzEQ479vEQ59",
+    "phone": "",
+    "booking": "",
+    "androidApp": "https://play.google.com/store/apps/details?id=com.malaebapp.app",
+    "iosApp": "https://itunes.apple.com/us/app/malaeb-app/id1094201670?ls=1&mt=8",
+    "method": "تطبيق ملاعب",
+    "price": 110,
+    "priceHours": 1,
+    "note": "ساعة: ١١٠ ريال · ساعة ونصف: ١٤٠ ريال · ساعتان: ١٩٠ ريال.",
+    "status": "موقع من المستخدم",
+    "pricing": [
+      {
+        "label": "ساعة",
+        "amount": 110,
+        "hours": "ساعة"
+      },
+      {
+        "label": "ساعة ونصف",
+        "amount": 140,
+        "hours": "ساعة ونصف"
+      },
+      {
+        "label": "ساعتان",
+        "amount": 190,
+        "hours": "ساعتان"
+      }
+    ]
+  },
+  {
+    "name": "جامعة اليمامة",
+    "area": "القيروان · طريق الملك فهد",
+    "map": "https://www.google.com/maps/search/?api=1&query=Al%20Yamamah%20University%20Riyadh",
+    "phone": "9665599888307",
+    "booking": "",
+    "method": "واتساب",
+    "price": 150,
+    "note": "ساعة ونصف: ٢٠٠ ريال · ساعتان: ٢٥٠ ريال. موقع الجامعة؛ بوابة الملعب تحتاج تأكيد. العملة مفترضة بالريال.",
+    "status": "بحث بالخريطة"
+  },
+  {
+    "name": "جامعة الأمير سلطان",
+    "area": "شارع رفحاء",
+    "map": "https://www.google.com/maps/search/?api=1&query=Prince%20Sultan%20University%20Riyadh",
+    "phone": "",
+    "booking": "https://intennis-sa.com/book/hourly",
+    "method": "إن تنس",
+    "price": null,
+    "note": "موقع الجامعة؛ مدخل الملعب يحتاج تأكيد.",
+    "status": "بحث بالخريطة"
+  },
+  {
+    "name": "المدينة الرقمية",
+    "area": "كراون بلازا المدينة الرقمية",
+    "map": "https://www.google.com/maps/search/?api=1&query=Crowne%20Plaza%20Riyadh%20RDC%20Hotel",
+    "phone": "",
+    "booking": "https://intennis-sa.com/book/hourly",
+    "method": "إن تنس",
+    "price": 180,
+    "priceHours": 1,
+    "note": "ساعة: ١٨٠ ريال · ساعتان: ٣٦٠ ريال. الموقع من تقرير ثمانية؛ مدخل الملعب يحتاج تأكيد.",
+    "status": "بحث بالخريطة"
+  },
+  {
+    "name": "نت تنس",
+    "area": "الدرعية",
+    "map": "https://www.google.com/maps/search/?api=1&query=Net%20Tennis%20Academy%20Diriyah",
+    "phone": "",
+    "booking": "https://netacademy.sa",
+    "method": "الموقع الإلكتروني",
+    "price": 200,
+    "note": "قرب بادل أب وملاعب المونديال حسب تقرير ثمانية.",
+    "status": "بحث بالخريطة",
+    "priceHours": 1
+  },
+  {
+    "name": "راكت",
+    "area": "مركز الملك سلمان الاجتماعي",
+    "map": "https://www.google.com/maps/search/?api=1&query=Racket%20Tennis%20King%20Salman%20Social%20Center%20Riyadh",
+    "phone": "",
+    "booking": "",
+    "method": "تطبيق سنجاب",
+    "price": 199,
+    "note": "السعر من المستخدم: ١٩٩ ريال للساعة.",
+    "status": "بحث بالخريطة"
+  },
+  {
+    "name": "بيت التنس",
+    "area": "",
+    "map": "https://www.google.com/maps/search/?api=1&query=Tennis%20Home%20Academy%20Riyadh",
+    "phone": "",
+    "booking": "https://tennishomeacademy.com",
+    "method": "الموقع الإلكتروني",
+    "price": 286,
+    "note": "٣ ملاعب حسب ملاحظاتك. الفروع المقصودة تحتاج تحديد؛ المصدر يذكر ٣ فروع.",
+    "status": "بحث بالخريطة",
+    "priceHours": 2
+  },
+  {
+    "name": "كمباوند سلوى",
+    "area": "",
+    "map": "https://www.google.com/maps/search/?api=1&query=Salwa%20Garden%20Village%20Riyadh",
+    "phone": "34680800055",
+    "booking": "",
+    "method": "واتساب · يونس",
+    "price": 110,
+    "note": "الموقع المرجّح Salwa Garden Village؛ يُؤكَّد مع يونس. شروط الدخول غير محددة.",
+    "status": "بحث بالخريطة"
+  },
+  {
+    "name": "كمباوند نجد",
+    "area": "غرناطة",
+    "map": "https://www.google.com/maps/search/?api=1&query=Najd%20Compound%20Ghirnatah%20Riyadh",
+    "phone": "966504112694",
+    "booking": "https://najdcompound.com/",
+    "method": "واتساب · Iggy",
+    "price": null,
+    "note": "الفترة ١٠ – ١١ مساءً غير مذكورة. ٣ ملاعب مضاءة وفق الموقع الرسمي؛ شروط دخول غير السكان تحتاج تأكيد.",
+    "status": "بحث بالخريطة",
+    "pricing": [
+      {
+        "label": "الذروة",
+        "amount": 150,
+        "hours": "٦ مساءً – ١٠ مساءً"
+      },
+      {
+        "label": "خارج الذروة",
+        "amount": 99,
+        "hours": "٥ – ٨ صباحًا، ٥ – ٦ مساءً، ١١ مساءً – ٥ صباحًا"
+      }
+    ],
+    "priceHours": 1
+  },
+  {
+    "name": "وادي حنيفة — Spin",
+    "area": "وادي حنيفة",
+    "map": "https://maps.app.goo.gl/E9nEb3JmCVLXu7SV7?g_st=ic",
+    "phone": "966557000674",
+    "booking": "https://matchpointksa.com/rent-court/p502506753",
+    "method": "Matchpoint",
+    "price": 200,
+    "note": "السعر واللوكيشن من المستخدم.",
+    "status": "موقع من المستخدم"
+  },
+  {
+    "name": "الإنتركونتيننتال",
+    "area": "",
+    "map": "https://maps.app.goo.gl/7LZbBFji8xC3KigTA?g_st=ic",
+    "phone": "",
+    "callPhone": "966114655000",
+    "booking": "",
+    "method": "اتصال هاتفي",
+    "price": 230,
+    "priceHours": 1,
+    "note": "الحجز في نفس اليوم عبر الهاتف، ابتداءً من الساعة ١٠ صباحًا. رقم الحجز: 0114655000.",
+    "status": "موقع من المستخدم"
+  },
+  {
+    "name": "فال كمباوند",
+    "area": "طريق المطار · مقابل جامعة الإمام",
+    "map": "https://www.google.com/maps/search/?api=1&query=24.812028,46.715833",
+    "phone": "",
+    "booking": "https://falcompounds.org/",
+    "method": "تم إرسال إيميل",
+    "price": null,
+    "note": "ملعبان حسب الموقع الرسمي. بانتظار الرد عن الحجز والأسعار وشروط الدخول.",
+    "status": "إحداثيات المنشأة"
+  },
+  {
+    "name": "ملعب جامعة الملك سعود",
+    "area": "",
+    "map": "https://maps.app.goo.gl/k9PCpDxv6CMRGqjF7",
+    "phone": "",
+    "booking": "https://script.google.com/macros/s/AKfycbw54XLyouWpnqVkndKVVueGh9HrqigebxWqw0MvHxg51XRxV3qEDHUSu00xc55Ep7Ejlw/exec",
+    "method": "نموذج الحجز",
+    "price": 150,
+    "priceHours": 1,
+    "note": "الفترة المسائية: ٤ مساءً – ٥ صباحًا. أدخل بيانات صحيحة وتأكد من وصول بريد تأكيد الحجز؛ يُلغى الحجز تلقائيًا إذا كانت البيانات خاطئة. للإلغاء تواصل عبر واتساب قبل الموعد بيوم على الأقل. رقم واتساب الإلغاء غير مضاف.",
+    "status": "موقع من المستخدم"
+  }
+]
