@@ -191,7 +191,8 @@ window.COURTS_DATA = [
           "raw": "9665599888307",
           "e164": null,
           "formatStatus": "needs_review",
-          "ownershipVerified": false
+          "ownershipVerified": false,
+          "enableWhatsApp": true
         }
       ],
       "links": []

@@ -9,7 +9,7 @@ Reviewed all 15 original records. This is a structural and editorial audit of th
 - Assigned stable venue IDs; used consistent nested fields and `null` for missing values.
 - Separated shared map links, map searches and coordinates. None claim a verified court entrance.
 - Separated booking pages from general websites and app-store downloads. An email awaiting a reply is now a pending booking status, with the original note retained.
-- Preserved the questionable Al Yamamah number verbatim, flagged its Saudi number format, and removed its active WhatsApp action without guessing a replacement.
+- Preserved the questionable Al Yamamah number verbatim and flagged its Saudi number format. Its WhatsApp action is enabled as requested, while the interface continues to identify the number as unverified.
 - Retained the non-Saudi Salwa contact unchanged. Its format is plausible; ownership and WhatsApp availability remain unverified.
 - Retained a complete original snapshot in `source-records.json`. `courts.json` is the canonical cleaned dataset; the offline browser bundle is generated from it.
 
@@ -20,7 +20,7 @@ Reviewed all 15 original records. This is a structural and editorial audit of th
 | القيروان | 110; 155 / 90 min; 210 / 120 min | Base duration absent from the explicit record; display 110 with a duration warning. Shared map link retained. |
 | العارض | 110; 155 / 90 min; 210 / 120 min | Same duration ambiguity; distinct venue and map retained despite shared contact and prices. |
 | شوايات | 110 / 60 min; 140 / 90 min; 190 / 120 min | Area missing. Both app stores available in the main actions. Removed contradictory hourly labeling from longer-duration tiers. |
-| جامعة اليمامة | 150; 200 / 90 min; 250 / 120 min | Base duration unspecified; currency assumed in source. Raw +9665599888307 has an unexpected Saudi format and is inactive. Entrance unconfirmed. |
+| جامعة اليمامة | 150; 200 / 90 min; 250 / 120 min | Base duration unspecified; currency assumed in source. Raw +9665599888307 has an unexpected Saudi format; its WhatsApp action is enabled but the number remains unverified. Entrance unconfirmed. |
 | جامعة الأمير سلطان | Not recorded | Booking link retained. Campus search is not a confirmed court entrance. |
 | المدينة الرقمية | 180 / 60 min; 360 / 120 min | Parsed the second duration from notes. Hotel map search and entrance uncertainty retained. |
 | نت تنس | 200 / 60 min | General website, not claimed to be a direct booking page. Map is a search. |
@@ -40,7 +40,7 @@ The old interface implicitly called prices hourly when `priceHours` was absent. 
 - Data preservation checks pass for all 15 records, including every original contact and URL.
 - 13 venues have at least one recorded price; 6 have shared map links; 6 have structurally usable contact channels.
 - Browser checks: Arabic search (including hamza variants), price and location filters, contact filtering, ascending hourly sorting, empty results/reset, saving/removing favorites and persistence after reload.
-- Expanded Al Yamamah details show the original questionable number and currency caveat without a contact link.
+- Expanded Al Yamamah details show the original questionable number and currency caveat with a warning that its WhatsApp link uses an unverified number.
 - Responsive checks at 320 px, 390 px and 768 px: no horizontal page overflow. Desktop and phone layouts visually inspected.
 - Browser error/warning log was empty during checks; JavaScript syntax validation passed.
 

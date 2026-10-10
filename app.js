@@ -30,7 +30,8 @@ const $=id=>document.getElementById(id);
 let filter='all',saved=new Set(),toastTimer;
 const storageKey='riyadh-tennis:saved:v1';
 try{const data=JSON.parse(localStorage.getItem(storageKey)||'[]');if(Array.isArray(data))saved=new Set(data.filter(id=>courts.some(c=>c.id===id)));}catch{/* Browsing still works when persistence is unavailable. */}
-const validContacts=c=>c.booking.contacts.filter(p=>p.e164&&p.formatStatus==='plausible');
+const validContacts=c=>c.booking.contacts.filter(p=>p.e164&&p.formatStatus==='plausible'||p.type==='whatsapp'&&p.enableWhatsApp&&/^\d+$/.test(p.raw));
+const contactUrl=p=>p.type==='whatsapp'?'https://wa.me/'+(p.e164?p.e164.slice(1):p.raw):'tel:'+p.e164;
 const hourPrice=c=>{const prices=c.prices.filter(p=>p.durationMinutes===60&&p.currencyStatus==='recorded');return prices.length?Math.min(...prices.map(p=>p.amount)):null;};
 const duration=minutes=>minutes===60?'ساعة':minutes===90?'ساعة ونصف':minutes===120?'ساعتان':minutes?`${n(minutes)} دقيقة`:'مدة غير محددة';
 function safeUrl(url){try{const u=new URL(url);return ['https:','tel:'].includes(u.protocol)?u.href:'#';}catch{return '#';}}
@@ -47,13 +48,13 @@ function cardMarkup(c){
  const contacts=validContacts(c),online=c.booking.links.find(l=>l.type==='booking'),site=c.booking.links.find(l=>l.type==='website'),apps=c.booking.links.filter(l=>['android','ios'].includes(l.type));
  let primary='';
  if(online)primary=link(online.url,'انتقل للحجز','calendar','action primary');
- else if(contacts.length){const p=contacts[0];primary=link(p.type==='whatsapp'?'https://wa.me/'+p.e164.slice(1):'tel:'+p.e164,p.type==='whatsapp'?'تواصل عبر واتساب':'اتصل للحجز',p.type==='whatsapp'?'chat':'phone','action primary');}
+ else if(contacts.length){const p=contacts[0];primary=link(contactUrl(p),p.enableWhatsApp?'أفضل طريقة للتواصل: واتساب':p.type==='whatsapp'?'تواصل عبر واتساب':'اتصل للحجز',p.type==='whatsapp'?'chat':'phone','action primary');}
  else if(apps.length)primary=apps.map(a=>link(a.url,a.label,'app','action primary')).join('');
  else if(site)primary=link(site.url,'موقع المنشأة','globe','action primary');
  const kind=c.map.kind,mapLabel=kind==='search'?'بحث بالخريطة':kind==='coordinates'?'إحداثيات المنشأة':'رابط موقع مشارَك';
  const mapAction=link(c.map.url,kind==='search'?'بحث بالخريطة':'عرض الموقع','pin',`action ${primary?'':'primary'}`);
- const detailsLinks=[...c.booking.links.map(l=>link(l.url,l.type==='booking'?'صفحة الحجز':l.label,l.type==='booking'?'calendar':l.type==='website'?'globe':'app')),...contacts.map(p=>link(p.type==='whatsapp'?'https://wa.me/'+p.e164.slice(1):'tel:'+p.e164,p.type==='whatsapp'?'واتساب':'اتصال',p.type==='whatsapp'?'chat':'phone'))].join('');
- const invalid=c.booking.contacts.filter(p=>!p.e164).map(p=>`<p class="issue">رقم التواصل يحتاج مراجعة: <bdi dir="ltr">+${escapeHTML(p.raw)}</bdi>. لم يُفعّل رابط التواصل.</p>`).join('');
+ const detailsLinks=[...c.booking.links.map(l=>link(l.url,l.type==='booking'?'صفحة الحجز':l.label,l.type==='booking'?'calendar':l.type==='website'?'globe':'app')),...contacts.map(p=>link(contactUrl(p),p.type==='whatsapp'?'واتساب':'اتصال',p.type==='whatsapp'?'chat':'phone'))].join('');
+ const invalid=c.booking.contacts.filter(p=>!p.e164).map(p=>`<p class="issue">رقم التواصل يحتاج مراجعة: <bdi dir="ltr">+${escapeHTML(p.raw)}</bdi>. ${p.enableWhatsApp?'رابط واتساب يستخدم الرقم كما ورد دون التحقق من صحته.':'لم يُفعّل رابط التواصل.'}</p>`).join('');
  return `<article class="card" data-id="${c.id}" aria-labelledby="name-${c.id}"><div class="card-body"><div class="card-top"><span class="venue-icon">${icon('court')}</span><span class="map-badge">${icon(kind==='search'?'search':'pin')}${mapLabel}</span><button class="icon-button save-button" data-save="${c.id}" aria-label="${saved.has(c.id)?'إزالة':'حفظ'} ${escapeHTML(c.name)}${saved.has(c.id)?' من المحفوظة':''}" aria-pressed="${saved.has(c.id)}">${icon('bookmark')}</button></div><h3 id="name-${c.id}">${escapeHTML(c.name)}</h3><p class="location">${icon('pin')}${escapeHTML(c.locationText||'المنطقة غير مسجّلة')}</p><div class="price-block">${priceMarkup(c)}</div><p class="booking-method">${icon(c.booking.method.includes('واتساب')?'chat':c.booking.method.includes('تطبيق')?'app':'calendar')}<span>الحجز: <b>${escapeHTML(c.booking.method)}${invalid?' · الرقم يحتاج مراجعة':''}</b></span></p><details class="card-details"><summary>التفاصيل والأسعار ${icon('chevron')}</summary><div class="expanded">${c.prices.length?`<table class="price-table" aria-label="أسعار ${escapeHTML(c.name)}"><tbody>${c.prices.map(p=>`<tr><td>${escapeHTML(p.label||duration(p.durationMinutes))}${p.timeWindow?`<small>${escapeHTML(p.timeWindow)} · للساعة</small>`:''}</td><td>${n(p.amount)} ريال</td></tr>`).join('')}</tbody></table>`:''}<p>${escapeHTML(c.notes)}</p>${invalid}${c.issues.includes('currency_assumed')?'<p class="issue">عملة الأسعار مفترضة بالريال؛ تحتاج تأكيدًا.</p>':''}<p>${kind==='search'?'الرابط يبحث باسم المنشأة؛ الموقع ومدخل الملعب غير مؤكدين.':kind==='coordinates'?'الإحداثيات تخص المنشأة؛ مدخل الملعب غير مؤكد.':'الرابط من السجل الأصلي؛ مدخل الملعب لم يُتحقق منه.'}</p><div class="secondary-links">${detailsLinks}</div></div></details></div><div class="actions">${primary}${mapAction}</div></article>`;
 }
 function updateSaved(){ $('saved-count').textContent=n(saved.size); }
@@ -82,3 +83,23 @@ $('courts').addEventListener('click',event=>{const button=event.target.closest('
  showToast(persisted?(adding?'تم حفظ الملعب على هذا الجهاز':'تمت إزالة الملعب من المحفوظة'):'الحفظ متاح لهذه الجلسة فقط');
 });
 render();
+
+const branchNames={'JW Marriott Elite':'جي دبليو ماريوت','King Fahad Branch':'فرع الملك فهد','Mariot Airport Branch':'فرع ماريوت المطار'};
+const slotLabel=s=>/family/i.test(s)?'ملعب عائلي':/shaded|مسقوف/i.test(s)?'ملعب مسقوف':/soon/i.test(s)?'ملعب النخبة':'ملعب تنس';
+const dayLabel=d=>new Date(`${d}T12:00:00`).toLocaleDateString('ar-SA-u-ca-gregory',{weekday:'long',day:'numeric',month:'long'});
+function slotsMarkup(slots){
+ const byBranch=new Map();
+ for(const s of slots){const b=byBranch.get(s.location)||new Map();byBranch.set(s.location,b);const key=`${s.service}|${s.price}`;const svc=b.get(key)||{service:s.service,price:s.price,days:new Map()};b.set(key,svc);const times=svc.days.get(s.date)||new Set();svc.days.set(s.date,times);times.add(s.time);}
+ return [...byBranch].map(([branch,services])=>`<article class="card slot-card"><div class="card-body"><h3>${escapeHTML(branchNames[branch]||branch)}</h3>${[...services.values()].map(svc=>`<h4>${slotLabel(svc.service)} <small>${n(svc.price)} ريال / ساعة</small></h4><dl>${[...svc.days].map(([d,t])=>`<div><dt>${escapeHTML(dayLabel(d))}</dt><dd>${[...t].sort().map(x=>`<bdi dir="ltr">${escapeHTML(x)}</bdi>`).join('')}</dd></div>`).join('')}</dl>`).join('')}</div><div class="actions">${link('https://tennishomeacademy.com/tennis-court-rent/','احجز من موقع الأكاديمية','calendar','action primary')}</div></article>`).join('');
+}
+$('load-slots').addEventListener('click',async()=>{
+ const button=$('load-slots');button.disabled=true;$('slots-status').textContent='جارٍ جلب المواعيد…';
+ try{
+  const res=await fetch('/api/slots?sport=tennis');if(!res.ok)throw new Error(res.status);
+  const {fetchedAt,slots}=await res.json();
+  $('slots-results').innerHTML=slots.length?slotsMarkup(slots):'';
+  $('slots-status').textContent=slots.length?`آخر تحديث: ${new Date(fetchedAt).toLocaleTimeString('ar-SA',{hour:'numeric',minute:'2-digit'})}`:'لا توجد مواعيد متاحة حاليًا.';
+ }catch{
+  $('slots-status').textContent=location.protocol==='file:'?'لعرض المواعيد شغّل الأمر node server.mjs ثم افتح http://localhost:8080':'تعذّر جلب المواعيد. حاول مرة أخرى.';
+ }finally{button.disabled=false;}
+});
