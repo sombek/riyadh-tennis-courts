@@ -545,7 +545,7 @@
     "test:github-installation": {
       "detected_at": "2026-10-17T19:00:10.553236+03:00",
       "kind": "test",
-      "status": "pending"
+      "status": "sending"
     },
     "test:installation": {
       "detected_at": "2026-10-17T18:01:38.857754+03:00",
