@@ -1,0 +1,15 @@
+{
+  "url": "https://netacademy.sa/book?activity=tennis&type=court",
+  "actual_execution_time": "2026-10-17T17:40:15.232772+03:00",
+  "website_access_succeeded": true,
+  "calendar_parsed": false,
+  "errors": [
+    {
+      "url": "https://netacademy.sa/book",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "http_status": 200,
+  "title": "Book Now - Net Tennis Academy",
+  "visible_text": "About\nPrograms\nFacilities\nLocation\nEN\n/\nAR\nBook Now\nSign In\nOctober 2026\nSu\nMo\nTu\nWe\nTh\nFr\nSa\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nSlot Duration\n55 Min\n110 Min\nSelect Time\n5:00 AM\n6:00 AM\n7:00 AM\n8:00 AM\n9:00 AM\n10:00 AM\n3:00 PM\n4:00 PM\n7:00 PM\n11:00 PM\nPost Midnight\n12:00 AM\nNET ACADEMY\n\nA community for tennis lovers in Diriyah. Seven international-spec courts, a dedicated coaching team, and programs for every age and level.\n\nSITEMAP\n\nAbout\nPrograms\nFacilities\nLocation\nPrivacy Policy\nTerms of Service\n\nVISIT\n\nNET Tennis Academy\nPGWF+VG9, Al Diriyah Al Jadidah\nDiriyah 13734, Saudi Arabia\n\nSun \u2013 Thu \u00b7 6\u20139 AM \u00b7 4 PM \u2013 12 AM\nFri \u2013 Sat \u00b7 6\u201310 AM \u00b7 4 PM \u2013 12 AM\n\n+966 55 442 6646\n\n\u00a9 2026 NET Tennis Academy. All rights reserved.\n\nMade in Saudi \ud83c\uddf8\ud83c\udde6\u2022Powered by askflow.sa"
+}

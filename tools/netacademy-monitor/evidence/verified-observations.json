@@ -1,0 +1,554 @@
+{
+  "failure_episode": null,
+  "failure_streak": 0,
+  "last_success_at": "2026-10-17T18:02:35.736868+03:00",
+  "latest_released": "2026-10-18",
+  "observations": [
+    {
+      "at": "2026-10-17T17:48:33.085063+03:00",
+      "latest_bookable": "2026-10-18",
+      "latest_released": "2026-10-18",
+      "new_dates": [],
+      "released_dates": [
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "slots": {
+        "2026-10-17": [
+          {
+            "duration": 55,
+            "end": "00:55",
+            "start": "00:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          },
+          {
+            "duration": 110,
+            "end": "00:50",
+            "start": "23:00"
+          }
+        ],
+        "2026-10-18": [
+          {
+            "duration": 55,
+            "end": "05:55",
+            "start": "05:00"
+          },
+          {
+            "duration": 55,
+            "end": "06:55",
+            "start": "06:00"
+          },
+          {
+            "duration": 55,
+            "end": "07:55",
+            "start": "07:00"
+          },
+          {
+            "duration": 55,
+            "end": "15:55",
+            "start": "15:00"
+          },
+          {
+            "duration": 55,
+            "end": "16:55",
+            "start": "16:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          },
+          {
+            "duration": 110,
+            "end": "06:50",
+            "start": "05:00"
+          },
+          {
+            "duration": 110,
+            "end": "07:50",
+            "start": "06:00"
+          },
+          {
+            "duration": 110,
+            "end": "16:50",
+            "start": "15:00"
+          }
+        ]
+      }
+    },
+    {
+      "at": "2026-10-17T17:49:49.230149+03:00",
+      "latest_bookable": "2026-10-18",
+      "latest_released": "2026-10-18",
+      "new_dates": [],
+      "released_dates": [
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "slots": {
+        "2026-10-17": [
+          {
+            "duration": 55,
+            "end": "00:55",
+            "start": "00:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          },
+          {
+            "duration": 110,
+            "end": "00:50",
+            "start": "23:00"
+          }
+        ],
+        "2026-10-18": [
+          {
+            "duration": 55,
+            "end": "05:55",
+            "start": "05:00"
+          },
+          {
+            "duration": 55,
+            "end": "06:55",
+            "start": "06:00"
+          },
+          {
+            "duration": 55,
+            "end": "07:55",
+            "start": "07:00"
+          },
+          {
+            "duration": 55,
+            "end": "15:55",
+            "start": "15:00"
+          },
+          {
+            "duration": 55,
+            "end": "16:55",
+            "start": "16:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          },
+          {
+            "duration": 110,
+            "end": "06:50",
+            "start": "05:00"
+          },
+          {
+            "duration": 110,
+            "end": "07:50",
+            "start": "06:00"
+          },
+          {
+            "duration": 110,
+            "end": "16:50",
+            "start": "15:00"
+          }
+        ]
+      }
+    },
+    {
+      "at": "2026-10-17T17:50:54.524970+03:00",
+      "latest_bookable": "2026-10-18",
+      "latest_released": "2026-10-18",
+      "new_dates": [],
+      "released_dates": [
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "slots": {
+        "2026-10-17": [
+          {
+            "duration": 55,
+            "end": "00:55",
+            "start": "00:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          },
+          {
+            "duration": 110,
+            "end": "00:50",
+            "start": "23:00"
+          }
+        ],
+        "2026-10-18": [
+          {
+            "duration": 55,
+            "end": "05:55",
+            "start": "05:00"
+          },
+          {
+            "duration": 110,
+            "end": "06:50",
+            "start": "05:00"
+          },
+          {
+            "duration": 55,
+            "end": "06:55",
+            "start": "06:00"
+          },
+          {
+            "duration": 110,
+            "end": "07:50",
+            "start": "06:00"
+          },
+          {
+            "duration": 55,
+            "end": "07:55",
+            "start": "07:00"
+          },
+          {
+            "duration": 55,
+            "end": "15:55",
+            "start": "15:00"
+          },
+          {
+            "duration": 110,
+            "end": "16:50",
+            "start": "15:00"
+          },
+          {
+            "duration": 55,
+            "end": "16:55",
+            "start": "16:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          }
+        ]
+      }
+    },
+    {
+      "at": "2026-10-17T17:52:33.858010+03:00",
+      "latest_bookable": "2026-10-18",
+      "latest_released": "2026-10-18",
+      "new_dates": [],
+      "released_dates": [
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "slots": {
+        "2026-10-17": [
+          {
+            "duration": 55,
+            "end": "00:55",
+            "start": "00:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          },
+          {
+            "duration": 110,
+            "end": "00:50",
+            "start": "23:00"
+          }
+        ],
+        "2026-10-18": [
+          {
+            "duration": 55,
+            "end": "05:55",
+            "start": "05:00"
+          },
+          {
+            "duration": 110,
+            "end": "06:50",
+            "start": "05:00"
+          },
+          {
+            "duration": 55,
+            "end": "06:55",
+            "start": "06:00"
+          },
+          {
+            "duration": 110,
+            "end": "07:50",
+            "start": "06:00"
+          },
+          {
+            "duration": 55,
+            "end": "07:55",
+            "start": "07:00"
+          },
+          {
+            "duration": 55,
+            "end": "15:55",
+            "start": "15:00"
+          },
+          {
+            "duration": 110,
+            "end": "16:50",
+            "start": "15:00"
+          },
+          {
+            "duration": 55,
+            "end": "16:55",
+            "start": "16:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          }
+        ]
+      }
+    },
+    {
+      "at": "2026-10-17T17:55:01.342674+03:00",
+      "latest_bookable": "2026-10-18",
+      "latest_released": "2026-10-18",
+      "new_dates": [],
+      "released_dates": [
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "slots": {
+        "2026-10-17": [
+          {
+            "duration": 55,
+            "end": "00:55",
+            "start": "00:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          },
+          {
+            "duration": 110,
+            "end": "00:50",
+            "start": "23:00"
+          }
+        ],
+        "2026-10-18": [
+          {
+            "duration": 55,
+            "end": "05:55",
+            "start": "05:00"
+          },
+          {
+            "duration": 110,
+            "end": "06:50",
+            "start": "05:00"
+          },
+          {
+            "duration": 55,
+            "end": "06:55",
+            "start": "06:00"
+          },
+          {
+            "duration": 110,
+            "end": "07:50",
+            "start": "06:00"
+          },
+          {
+            "duration": 55,
+            "end": "07:55",
+            "start": "07:00"
+          },
+          {
+            "duration": 55,
+            "end": "15:55",
+            "start": "15:00"
+          },
+          {
+            "duration": 110,
+            "end": "16:50",
+            "start": "15:00"
+          },
+          {
+            "duration": 55,
+            "end": "16:55",
+            "start": "16:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          }
+        ]
+      }
+    },
+    {
+      "at": "2026-10-17T18:01:38.853598+03:00",
+      "latest_bookable": "2026-10-18",
+      "latest_released": "2026-10-18",
+      "new_dates": [],
+      "released_dates": [
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "slots": {
+        "2026-10-17": [
+          {
+            "duration": 55,
+            "end": "00:55",
+            "start": "00:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          },
+          {
+            "duration": 110,
+            "end": "00:50",
+            "start": "23:00"
+          }
+        ],
+        "2026-10-18": [
+          {
+            "duration": 55,
+            "end": "05:55",
+            "start": "05:00"
+          },
+          {
+            "duration": 110,
+            "end": "06:50",
+            "start": "05:00"
+          },
+          {
+            "duration": 55,
+            "end": "06:55",
+            "start": "06:00"
+          },
+          {
+            "duration": 110,
+            "end": "07:50",
+            "start": "06:00"
+          },
+          {
+            "duration": 55,
+            "end": "07:55",
+            "start": "07:00"
+          },
+          {
+            "duration": 55,
+            "end": "15:55",
+            "start": "15:00"
+          },
+          {
+            "duration": 110,
+            "end": "16:50",
+            "start": "15:00"
+          },
+          {
+            "duration": 55,
+            "end": "16:55",
+            "start": "16:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          }
+        ]
+      }
+    },
+    {
+      "at": "2026-10-17T18:02:35.736868+03:00",
+      "latest_bookable": "2026-10-18",
+      "latest_released": "2026-10-18",
+      "new_dates": [],
+      "released_dates": [
+        "2026-10-17",
+        "2026-10-18"
+      ],
+      "slots": {
+        "2026-10-17": [
+          {
+            "duration": 55,
+            "end": "00:55",
+            "start": "00:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          },
+          {
+            "duration": 110,
+            "end": "00:50",
+            "start": "23:00"
+          }
+        ],
+        "2026-10-18": [
+          {
+            "duration": 55,
+            "end": "05:55",
+            "start": "05:00"
+          },
+          {
+            "duration": 110,
+            "end": "06:50",
+            "start": "05:00"
+          },
+          {
+            "duration": 55,
+            "end": "06:55",
+            "start": "06:00"
+          },
+          {
+            "duration": 110,
+            "end": "07:50",
+            "start": "06:00"
+          },
+          {
+            "duration": 55,
+            "end": "07:55",
+            "start": "07:00"
+          },
+          {
+            "duration": 55,
+            "end": "15:55",
+            "start": "15:00"
+          },
+          {
+            "duration": 110,
+            "end": "16:50",
+            "start": "15:00"
+          },
+          {
+            "duration": 55,
+            "end": "16:55",
+            "start": "16:00"
+          },
+          {
+            "duration": 55,
+            "end": "23:55",
+            "start": "23:00"
+          }
+        ]
+      }
+    }
+  ],
+  "outbox": {
+    "test:installation": {
+      "detected_at": "2026-10-17T18:01:38.857754+03:00",
+      "kind": "test",
+      "message_id": 217,
+      "sent_at": "2026-10-17T18:01:39.632025+03:00",
+      "status": "sent"
+    }
+  },
+  "seen_dates": [
+    "2026-10-17",
+    "2026-10-18"
+  ],
+  "version": 1
+}

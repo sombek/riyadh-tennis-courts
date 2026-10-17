@@ -1,0 +1,27 @@
+[Unit]
+Description=Net Academy public tennis availability monitor
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=tennis-monitor
+WorkingDirectory=/opt/tennis-monitor
+EnvironmentFile=/etc/tennis-monitor.env
+Environment=STATE_PATH=/var/lib/tennis-monitor/state.json
+Environment=REQUIRE_EXISTING_STATE=1
+Environment=REQUIRE_TELEGRAM=1
+Environment=PLAYWRIGHT_BROWSERS_PATH=/opt/tennis-monitor/browsers
+ExecStart=/opt/tennis-monitor/.venv/bin/python -m monitor --log /var/log/tennis-monitor/checks.jsonl --diagnostics /var/lib/tennis-monitor/diagnostics
+TimeoutStartSec=10min
+StateDirectory=tennis-monitor
+LogsDirectory=tennis-monitor
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/tennis-monitor /var/log/tennis-monitor
+
+[Install]
+WantedBy=multi-user.target

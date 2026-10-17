@@ -1,0 +1,75 @@
+name: Tennis availability monitor
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+    inputs:
+      test_telegram:
+        description: 'Send the one-time installation test notification'
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: tennis-availability-monitor
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: tools/netacademy-monitor
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: monitor-state
+          path: tools/netacademy-monitor/runtime-state
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.12.23'
+          enable-cache: true
+          cache-dependency-glob: tools/netacademy-monitor/uv.lock
+      - name: Install Python and locked dependencies
+        run: uv sync --locked --python 3.12
+      - name: Install Chromium
+        run: uv run playwright install --with-deps chromium
+      - name: Automated tests
+        run: uv run python -m unittest discover -s tests -v
+      - name: Configure durable state branch
+        run: |
+          git -C runtime-state config user.name github-actions[bot]
+          git -C runtime-state config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          test -s runtime-state/state.json
+      - name: Check real public calendar
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          STATE_PATH: runtime-state/state.json
+          STATE_GIT: '1'
+          REQUIRE_EXISTING_STATE: '1'
+          REQUIRE_TELEGRAM: '1'
+          TEST_TELEGRAM: ${{ inputs.test_telegram || false }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          # GitHub does not supply the intended firing timestamp for cron events.
+          # Record an explicitly labelled nominal-hour estimate; do not invent precision.
+          if [ "$EVENT_NAME" = schedule ]; then
+            export SCHEDULED_AT="$(TZ=Asia/Riyadh date +%Y-%m-%dT%H:00:00+03:00)"
+            export SCHEDULED_TIME_IS_ESTIMATE=1
+          fi
+          if [ "$TEST_TELEGRAM" = true ]; then
+            uv run python -m monitor --test-telegram
+          else
+            uv run python -m monitor
+          fi
+      - name: Upload logs and sanitized diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: monitor-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            tools/netacademy-monitor/logs/
+            tools/netacademy-monitor/diagnostics/
+          retention-days: 30

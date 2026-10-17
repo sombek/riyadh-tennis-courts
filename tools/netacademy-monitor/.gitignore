@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+runtime/
+runtime-state/
+logs/
+diagnostics/
+# Raw exploration artifacts may contain irrelevant embedded site configuration.
+evidence/*.html
+evidence/*.js
+evidence/inspect_headers.py
+evidence/network.json
+evidence/explore.py
+evidence/verify_dates.py
+evidence/inspect_deeplink.py
+evidence/october18.png
