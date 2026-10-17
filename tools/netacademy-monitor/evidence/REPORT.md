@@ -56,3 +56,7 @@ A second process beginning **18:01:48 Riyadh** completed successfully after one 
 ## Hosted deployment attempt
 
 Source and hourly workflow were deployed to the selected repository. Run [39047232614](https://github.com/sombek/riyadh-tennis-courts/actions/runs/39047232614) began the monitor at **18:56:49 Riyadh** on October 17. All 20 tests passed on the hosted runner, but the booking page returned **HTTP 429 on all three Chromium attempts**. No calendar data was accepted. The failure was persisted remotely without changing the baseline, losing seven earlier observations or creating booking alerts. The workflow was disabled after this failure, and no second hosted website check was attempted. Telegram secrets were also missing in that run. Monitoring is **not operational**. The owner confirmed receipt of the earlier locally sent Telegram test. See DEPLOYMENT_STATUS.md for the current blocker.
+
+## Hosted Telegram verification
+
+After the owner added the two repository secrets, isolated GitHub Actions run [39047482326](https://github.com/sombek/riyadh-tennis-courts/actions/runs/39047482326) sent test message **218** at **19:00:13 Riyadh** on October 17. A second run [39047522532](https://github.com/sombek/riyadh-tennis-courts/actions/runs/39047522532) succeeded using the same persisted sent event and did not resend. Both tests deliberately avoided the booking site. The October 18 baseline and seven successful availability observations were preserved. The availability workflow remains disabled because its HTTP 429 blocker is unresolved.

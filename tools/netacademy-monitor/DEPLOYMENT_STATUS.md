@@ -12,8 +12,10 @@ The failure was committed to monitor-state at 18:57:00 Riyadh. The baseline rema
 
 The workflow is explicitly disabled (disabled_manually) to avoid repeated failed hourly requests. No further live target inspection was attempted after identifying this hosted-access blocker. Monitoring is NOT operational.
 
-The hosted run also had no Telegram secrets. GitHub still denies this connection access to the repository Actions secret public key (HTTP 403). The owner can add TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID through repository Settings > Secrets and variables > Actions. Adding secrets alone does not resolve the live website HTTP 429.
+The owner has now added TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID to repository Actions secrets. A separate manually dispatched workflow verified delivery directly from GitHub without accessing the booking site: Telegram message 218 was acknowledged at October 17, 2026, 19:00:13 Asia/Riyadh. Run: https://github.com/sombek/riyadh-tennis-courts/actions/runs/39047482326 . The credential blocker is resolved for workflow execution; website HTTP 429 remains unresolved.
 
-Next deployment work requires a legitimate always-on execution host that can inspect this public booking site successfully. Reverify live access before enabling the schedule, then run two real checks against persisted state and confirm a hosted Telegram test. Do not bypass authentication, CAPTCHA or other access controls. No VPS was provisioned and this temporary workspace is not permanent hosting.
+Next deployment work requires a legitimate always-on execution host that can inspect this public booking site successfully. Reverify live access before enabling the schedule, then run two real booking checks against persisted state. Hosted Telegram delivery is already verified. Do not bypass authentication, CAPTCHA or other access controls. No VPS was provisioned and this temporary workspace is not permanent hosting.
 
 Telegram delivery and restart deduplication were verified locally (message 217), and the user confirmed receipt. Credentials remain private and are not included in source or state.
+
+A second isolated hosted verification run also succeeded (https://github.com/sombek/riyadh-tennis-courts/actions/runs/39047522532). It reused sent event test:github-installation with message ID 218 and the original sent timestamp, issuing no duplicate Telegram request. The seven successful availability observations and October 18 baseline remain unchanged. The isolated test did not access the booking site or reset its failure streak.
