@@ -1,0 +1,60 @@
+name: Tennis Telegram delivery test
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: tennis-availability-monitor
+  cancel-in-progress: false
+jobs:
+  telegram:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: tools/netacademy-monitor
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: monitor-state
+          path: tools/netacademy-monitor/runtime-state
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.12.23'
+      - name: Install locked Python dependencies
+        run: uv sync --locked --python 3.12
+      - name: Configure state identity
+        run: |
+          git -C runtime-state config user.name github-actions[bot]
+          git -C runtime-state config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - name: Verify Telegram delivery without accessing the booking site
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          STATE_GIT: '1'
+          REQUIRE_EXISTING_STATE: '1'
+        run: |
+          uv run python - <<'PY'
+          import os
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          from monitor.state import Store
+          from monitor.notify import deliver
+          if not all(os.getenv(k) for k in ('TELEGRAM_BOT_TOKEN','TELEGRAM_CHAT_ID')):
+              raise SystemExit('Required Telegram repository secrets are missing')
+          store = Store('runtime-state/state.json')
+          event_id = 'test:github-installation'
+          store.data['outbox'].setdefault(event_id, dict(
+              kind='test', status='pending',
+              detected_at=datetime.now(ZoneInfo('Asia/Riyadh')).isoformat()))
+          store.save()
+          if not deliver(store):
+              raise SystemExit('Telegram delivery failed or has an uncertain outcome; inspect persisted state')
+          event = store.data['outbox'][event_id]
+          if event['status'] != 'sent':
+              raise SystemExit('Expected durable Telegram acknowledgment missing')
+          print('GitHub-hosted Telegram test verified; message ID:', event['message_id'])
+          print('Persisted sent timestamp (Riyadh):', event['sent_at'])
+          print('Repeat runs reuse this sent event and do not send a duplicate test.')
+          PY
