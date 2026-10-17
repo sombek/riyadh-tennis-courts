@@ -547,7 +547,7 @@
       "error": "Public calendar inspection failed (ValueError): Booking page HTTP 429",
       "failures": 3,
       "kind": "health",
-      "status": "pending"
+      "status": "sending"
     },
     "test:github-installation": {
       "detected_at": "2026-10-17T19:00:10.553236+03:00",
