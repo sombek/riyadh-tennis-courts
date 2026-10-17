@@ -1,8 +1,8 @@
 {
   "failure_episode": "2026-10-17T18:57:00.910785+03:00",
-  "failure_streak": 2,
+  "failure_streak": 3,
   "last_failure": {
-    "at": "2026-10-17T23:11:28.867987+03:00",
+    "at": "2026-10-18T01:55:18.191660+03:00",
     "error": "Public calendar inspection failed (ValueError): Booking page HTTP 429"
   },
   "last_success_at": "2026-10-17T18:02:35.736868+03:00",
@@ -542,6 +542,13 @@
     }
   ],
   "outbox": {
+    "health:2026-10-17T18:57:00.910785+03:00": {
+      "detected_at": "2026-10-18T01:55:18.191660+03:00",
+      "error": "Public calendar inspection failed (ValueError): Booking page HTTP 429",
+      "failures": 3,
+      "kind": "health",
+      "status": "pending"
+    },
     "test:github-installation": {
       "detected_at": "2026-10-17T19:00:10.553236+03:00",
       "kind": "test",
