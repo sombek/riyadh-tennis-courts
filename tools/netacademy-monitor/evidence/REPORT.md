@@ -60,3 +60,7 @@ Source and hourly workflow were deployed to the selected repository. Run [390472
 ## Hosted Telegram verification
 
 After the owner added the two repository secrets, isolated GitHub Actions run [39047482326](https://github.com/sombek/riyadh-tennis-courts/actions/runs/39047482326) sent test message **218** at **19:00:13 Riyadh** on October 17. A second run [39047522532](https://github.com/sombek/riyadh-tennis-courts/actions/runs/39047522532) succeeded using the same persisted sent event and did not resend. Both tests deliberately avoided the booking site. The October 18 baseline and seven successful availability observations were preserved. The availability workflow remains disabled because its HTTP 429 blocker is unresolved.
+
+## Retry schedule update
+
+At the user’s subsequent request, the availability workflow was re-enabled for checks every three hours (`0 */3 * * *` UTC, corresponding to 00:00/03:00/06:00/09:00/12:00/15:00/18:00/21:00 Asia/Riyadh). No immediate manual check was triggered by this change. This authorizes scheduled retries; it does not establish that the earlier HTTP 429 blocker has cleared.

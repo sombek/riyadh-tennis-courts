@@ -2,7 +2,7 @@
 
 Python 3.12 / Playwright Chromium monitor for https://netacademy.sa/book?activity=tennis&type=court. All dates and human-readable timestamps use **Asia/Riyadh (UTC+3)**. This monitors availability; it does not book or sign in.
 
-**Current status:** source and hourly workflow are installed in `sombek/riyadh-tennis-courts`, but the workflow is **paused** after all three hosted Chromium attempts received HTTP 429. Local extraction and persistent state were verified, and GitHub-hosted Telegram delivery is now verified (message 218 at 19:00:13 Riyadh). Successful hosted booking inspection and end-to-end monitoring remain unverified because of HTTP 429. See [deployment status](DEPLOYMENT_STATUS.md).
+**Current status:** source and three-hour workflow are installed in `sombek/riyadh-tennis-courts`, but the workflow is enabled for a retry every three hours at the user’s request after the first hosted Chromium check received HTTP 429. Local extraction and persistent state were verified, and GitHub-hosted Telegram delivery is now verified (message 218 at 19:00:13 Riyadh). Successful hosted booking inspection and end-to-end monitoring remain unverified because of HTTP 429. See [deployment status](DEPLOYMENT_STATUS.md).
 
 ## How detection works
 
@@ -42,7 +42,7 @@ Exit status is nonzero for calendar failure, missing required Telegram configura
 
 ## GitHub Actions deployment (no VPS)
 
-Use a dedicated **private** repository because state and artifacts reveal your monitoring history. Source must be on the default branch for hourly schedules to run. This workspace's GitHub identity can read repositories, but repository creation was explicitly denied. Have the owner create a repository or select an existing destination before pushing.
+Use a dedicated **private** repository because state and artifacts reveal your monitoring history. Source must be on the default branch for three-hour schedules to run. This workspace's GitHub identity can read repositories, but repository creation was explicitly denied. Have the owner create a repository or select an existing destination before pushing.
 
 1. Push this directory to the repository's default branch. Authenticate `git` using `gh auth setup-git` if needed.
 2. From that source checkout, run `bash scripts/publish_state_branch.sh`. This creates the independent `monitor-state` branch **once**, containing `state.json`. It refuses to overwrite an existing branch. Do not protect that branch against the workflow's state updates; keep source protection separate. Initialize before enabling scheduled execution.
@@ -52,7 +52,7 @@ Use a dedicated **private** repository because state and artifacts reveal your m
 6. Run manually a second time; verify a second observation is persisted with no duplicate test or release notification.
 7. Confirm at least one scheduled run, inspect logs/artifacts, and keep GitHub failure notifications enabled as a fallback if the monitor itself cannot reach Telegram.
 
-Workflow: [../../.github/workflows/tennis-monitor.yml](../../.github/workflows/tennis-monitor.yml). It checks at `0 * * * *` UTC, which is also minute zero every Riyadh hour, supports manual dispatch, and serializes executions with one concurrency group. A long-running job cannot overlap another, though GitHub may coalesce pending runs. Runtime is bounded to 15 minutes; normal verified local checks took seconds.
+Workflow: [../../.github/workflows/tennis-monitor.yml](../../.github/workflows/tennis-monitor.yml). It checks at `0 */3 * * *` UTC, which maps to 00:00, 03:00, 06:00, 09:00, 12:00, 15:00, 18:00 and 21:00 Asia/Riyadh, supports manual dispatch, and serializes executions with one concurrency group. A long-running job cannot overlap another, though GitHub may coalesce pending runs. Runtime is bounded to 15 minutes; normal verified local checks took seconds.
 
 **Timing limits:** GitHub scheduled workflows can be delayed or skipped, especially at minute zero. They cannot establish the exact release second. Scheduled-event logs label the current hour as an estimate because GitHub does not provide the intended firing timestamp. Manual runs record `scheduled_execution_time=null`. First observation bounds release between the previous successful check and discovery; observation history is needed before inferring a daily release time. GitHub plan minutes apply; no paid service was provisioned here.
 
@@ -80,7 +80,7 @@ sudo systemctl enable --now tennis-monitor.timer
 sudo systemctl start tennis-monitor.service
 systemctl list-timers tennis-monitor.timer
 journalctl -u tennis-monitor.service
-systemd-analyze calendar '*-*-* *:00:00 Asia/Riyadh'
+systemd-analyze calendar '*-*-* 00,03,06,09,12,15,18,21:00:00 Asia/Riyadh'
 ```
 
 Timer uses `AccuracySec=1s`, zero randomized delay and persistent catch-up after restarts. The service manager prevents overlap. Source installation paths must exist before full unit verification. The optional Dockerfile supports a persistent `/data` mount; schedule container execution from the host. A continuously running scheduler is intentionally not embedded in the image.
@@ -97,4 +97,4 @@ Automated tests cover baseline/restarts, release confirmation, unchanged checks,
 
 ## Integration into riyadh-tennis-courts
 
-Source lives under `tools/netacademy-monitor/`; the static court directory is unchanged. Run Python/uv commands from this directory. The workflow checks out the state branch inside this directory and keeps its own source/tests/logs separate from the website. Run the state-branch initialization helper from this directory; Git will find the repository origin in its parent checkout. Reactivation requires successful legitimate live host access and repeated verified hosted availability runs.
+Source lives under `tools/netacademy-monitor/`; the static court directory is unchanged. Run Python/uv commands from this directory. The workflow checks out the state branch inside this directory and keeps its own source/tests/logs separate from the website. Run the state-branch initialization helper from this directory; Git will find the repository origin in its parent checkout. Operational verification still requires successful legitimate live host access and repeated verified hosted availability runs.
