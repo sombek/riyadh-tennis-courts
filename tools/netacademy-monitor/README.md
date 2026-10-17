@@ -2,7 +2,7 @@
 
 Python 3.12 / Playwright Chromium monitor for https://netacademy.sa/book?activity=tennis&type=court. All dates and human-readable timestamps use **Asia/Riyadh (UTC+3)**. This monitors availability; it does not book or sign in.
 
-**Current status:** real Chromium access and calendar/slot extraction verified locally. Baseline survives independent process executions, and unchanged availability produces no release alerts. A real Telegram test was accepted successfully on October 17 at 18:01:39 Riyadh (message ID 217). Credentials are configured privately for local execution; The selected deployment destination is `sombek/riyadh-tennis-courts`. The integration cannot yet be activated because the GitHub connection is denied Actions secret access. This is **not yet an operational deployed service**. See [inspection report](evidence/REPORT.md).
+**Current status:** real Chromium access and calendar/slot extraction verified locally. Baseline survives independent process executions, and unchanged availability produces no release alerts. A real Telegram test was accepted successfully on October 17 at 18:01:39 Riyadh (message ID 217). Credentials are configured privately for local execution; The selected deployment destination is `sombek/riyadh-tennis-courts`. The integration cannot yet be activated because GitHub denied code pushes, branch creation and Actions secret access. See DEPLOYMENT_STATUS.md. This is **not yet an operational deployed service**. See [inspection report](evidence/REPORT.md).
 
 ## How detection works
 
@@ -97,4 +97,4 @@ Automated tests cover baseline/restarts, release confirmation, unchanged checks,
 
 ## Integration into riyadh-tennis-courts
 
-Source lives under `tools/netacademy-monitor/`; the static court directory is unchanged. Run Python/uv commands from this directory. The workflow checks out the state branch inside this directory and keeps its own source/tests/logs separate from the website. Run the state-branch initialization helper from this directory; Git will find the repository origin in its parent checkout. Deployment is blocked until Actions secrets and workflow-write access are available.
+Source lives under `tools/netacademy-monitor/`; the static court directory is unchanged. Run Python/uv commands from this directory. The workflow checks out the state branch inside this directory and keeps its own source/tests/logs separate from the website. Run the state-branch initialization helper from this directory; Git will find the repository origin in its parent checkout. Deployment is blocked until repository code/workflow write, Actions dispatch and Actions secret access are available.
