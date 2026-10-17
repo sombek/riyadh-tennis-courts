@@ -545,7 +545,9 @@
     "test:github-installation": {
       "detected_at": "2026-10-17T19:00:10.553236+03:00",
       "kind": "test",
-      "status": "sending"
+      "message_id": 218,
+      "sent_at": "2026-10-17T19:00:13.871378+03:00",
+      "status": "sent"
     },
     "test:installation": {
       "detected_at": "2026-10-17T18:01:38.857754+03:00",
