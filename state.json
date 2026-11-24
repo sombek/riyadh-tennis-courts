@@ -1,8 +1,8 @@
 {
   "failure_episode": "2026-10-17T18:57:00.910785+03:00",
-  "failure_streak": 213,
+  "failure_streak": 214,
   "last_failure": {
-    "at": "2026-11-24T15:12:20.701162+03:00",
+    "at": "2026-11-24T18:08:41.693678+03:00",
     "error": "Public calendar inspection failed (ValueError): Booking page HTTP 429"
   },
   "last_success_at": "2026-10-17T18:02:35.736868+03:00",
